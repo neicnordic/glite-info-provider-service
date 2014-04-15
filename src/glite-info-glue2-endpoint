@@ -17,7 +17,6 @@
 # 28/08/12: Publish compliance with the EGI GLUE 2 profile
 #           Add publication of HostDN as an OtherInfo item
 # 29/09/12: Add publication of OS name and version as OtherInfos
-# 22/10/12: Modify the trunc subroutine to change non-ASCII characters to ?
 #
 # In general this code is expected to be called from a wrapper script
 # which also generates the parent Service object
@@ -807,16 +806,11 @@ sub trunc {
 # Truncates string attributes to a "reasonable" length, somewhat arbitrarily
 # taken to be 240 chars. Excess text is replaced by the "well-known" error
 # indicator 4444. Also strip leading and trailing spaces, which are unlikely
-# to be useful in any attribute. Also for now translate non-ASCII characters
-# to ? as the deployed schema doesn't allow them, see
-# https://savannah.cern.ch/bugs/?98046
+# to be useful in any attribute.
 
     if ($_[0]) {
 	$_[0] =~ s/^\s+//;
 	$_[0] =~ s/\s+$//;
-
-# Zap any non-ASCII characters (replaced with a ?)
-	$_[0] =~ tr/\0-\x7f/?/c;
 
 	if (length($_[0]) > 240) {
 	    $_[0] = substr($_[0], 0, 239) . "...4444";
