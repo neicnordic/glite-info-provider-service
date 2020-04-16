@@ -1,4 +1,4 @@
-Source: glue-service-provider
+Source: glite-info-provider-service
 Maintainer: Laurence Field <project-grid-info-support@cern.ch>
 Section: net
 Priority: optional
@@ -9,7 +9,7 @@ Vcs-Browser: http://svnweb.cern.ch/world/wsvn/gridinfo/glue-service-provider/tru
 Vcs-Svn: svn://svn.cern.ch/reps/gridinfo/glue-service-provider/trunk
 DM-Upload-Allowed: yes
 
-Package: glue-service-provider
+Package: glite-info-provider-service
 Architecture: all
 Depends: ${misc:Depends}, bdii
 Description: The GLUE service information provider. This enables Grid services 

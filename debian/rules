@@ -4,4 +4,4 @@
 	dh $@
 
 override_dh_auto_install:
-	$(MAKE) prefix=debian/glue-service-provider install
+	$(MAKE) prefix=debian/glite-info-provider-service install
