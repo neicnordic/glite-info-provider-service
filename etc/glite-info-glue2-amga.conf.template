@@ -79,7 +79,7 @@ get_implementor = echo gLite
 
 get_implementationname = echo AMGA
 
-get_implementationversion = rpm -q emi.amga.server --queryformat '%{version}\n'
+get_implementationversion = glite-info-service-version emi.amga.server
 
 # The Quality Level for this endpoint: 1 = development, 2 = testing,
 # 3 = pre-production and 4 = production

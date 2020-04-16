@@ -23,7 +23,7 @@ service_type = org.glite.voms
 # This should be a command which returns the service interface version
 # in the format 3[.2[.1]]. Set to the server RPM version.
 
-get_version = rpm -q voms-server --queryformat '%{version}\n'
+get_version = glite-info-service-version voms-server
 
 # A command to return the service endpoint to stdout (uses variables set
 # in the init script)

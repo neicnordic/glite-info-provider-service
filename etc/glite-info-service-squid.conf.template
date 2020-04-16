@@ -21,7 +21,7 @@ service_type = org.lcg.Squid
 # in the format 3[.2[.1]].
 # Take the version from the frontier-squid rpm
 
-get_version = rpm -q frontier-squid --queryformat '%{version}\n'
+get_version = glite-info-service-version frontier-squid
 
 # A command to return the service endpoint to stdout (uses variables set
 # in the init script)

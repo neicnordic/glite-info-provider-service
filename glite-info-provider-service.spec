@@ -60,6 +60,7 @@ rm -rf %{buildroot}
 /usr/bin/glite-info-service-rtepublisher
 /usr/bin/glite-info-service-gatekeeper
 /usr/bin/glite-info-service-status
+/usr/bin/glite-info-service-version
 /etc/glite/info/service/glite-info-glue2-amga.conf.template
 /etc/glite/info/service/glite-info-glue2-argus-pap.conf.template
 /etc/glite/info/service/glite-info-glue2-argus-pep.conf.template

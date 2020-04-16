@@ -73,7 +73,7 @@ get_implementor = echo gLite
 
 get_implementationname = echo Argus
 
-get_implementationversion = rpm -q argus-pep-server --queryformat '%{version}\n'
+get_implementationversion = glite-info-service-version argus-pep-server
 
 # The Quality Level for this endpoint: 1 = development, 2 = testing,
 # 3 = pre-production and 4 = production

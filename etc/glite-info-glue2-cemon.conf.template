@@ -77,7 +77,7 @@ get_implementor = echo gLite
 
 get_implementationname = echo CEMon
 
-get_implementationversion =  rpm -q glite-ce-monitor --queryformat '%{version}\n'
+get_implementationversion =  glite-info-service-version glite-ce-monitor
 
 # The Quality Level for this endpoint: 1 = development, 2 = testing,
 # 3 = pre-production and 4 = production

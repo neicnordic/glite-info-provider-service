@@ -20,7 +20,7 @@ service_type = org.glite.ce.Monitor
 # This should be a command which returns the service interface version
 # in the format 3[.2[.1]]. Set to the RPM version.
 
-get_version = rpm -q glite-ce-monitor --queryformat '%{version}\n'
+get_version = glite-info-service-version glite-ce-monitor
 
 # A command to return the service endpoint to stdout (uses variables set
 # in the init script)

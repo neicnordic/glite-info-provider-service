@@ -90,7 +90,7 @@ get_implementor = echo LCG
 
 get_implementationname = echo FrontierSquid
 
-get_implementationversion = rpm -q frontier-squid --queryformat '%{version}\n'
+get_implementationversion = glite-info-service-version frontier-squid
 
 # The Quality Level for this endpoint: 1 = development, 2 = testing,
 # 3 = pre-production and 4 = production

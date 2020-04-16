@@ -17,7 +17,7 @@ BDII_HOST=${BDII_HOST:-`hostname -f`}
 #BDII_PORT_READ=2170
 BDII_PORT=2170
 BDII_BIND=o=grid
-#BDII_DIR=/opt/bdii
+#BDII_DIR=/opt/bdii # also adjust get_version in glite-info-service-bdii.conf.template
 BDII_DIR=/usr
 BDII_UPDATE_LDIF="http://grid-monitoring.cern.ch/myegi/sam-pi/status_of_service_in_profile?vo_name=cms&profile_name=CMS_BLACKLIST&output=xml"
 

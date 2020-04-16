@@ -1,0 +1,13 @@
+#! /bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 PACKAGE"
+    exit 3
+fi
+package="$1"
+
+if [ -e /etc/debian_version ]; then
+    dpkg -s "$package" | grep ^Version: | cut -d' ' -f2-
+else
+    glite-info-service-version "$package"
+fi

@@ -74,11 +74,11 @@ get_implementor = echo gLite
 
 get_implementationname = echo BDII
 
-get_implementationversion = rpm -q bdii --queryformat '%{version}\n'
+get_implementationversion = glite-info-service-version bdii
 
 # Publish the GLUE schema version as an OtherInfo item
 
-get_otherinfo = echo -n SchemaVersion= && rpm -q glue-schema --queryformat '%{version}\n'
+get_otherinfo = echo -n SchemaVersion= && glite-info-service-version glue-schema
 
 # The Quality Level for this endpoint: 1 = development, 2 = testing,
 # 3 = pre-production and 4 = production

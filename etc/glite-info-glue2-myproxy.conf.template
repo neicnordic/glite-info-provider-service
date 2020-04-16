@@ -79,7 +79,7 @@ get_implementor = echo gLite
 
 get_implementationname = echo MyProxy
 
-get_implementationversion = rpm -q myproxy-server | cut -d- -f3
+get_implementationversion = glite-info-service-version myproxy-server
 
 # The Quality Level for this endpoint: 1 = development, 2 = testing,
 # 3 = pre-production and 4 = production

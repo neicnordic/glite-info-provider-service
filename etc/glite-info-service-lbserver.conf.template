@@ -20,7 +20,7 @@ service_type = org.glite.lb.Server
 # This should be a command which returns the service interface version
 # in the format 3[.2[.1]]. Set to the RPM version for the LB server.
 
-get_version = rpm -qa | grep 'glite-lb-server-[0-9]' | cut -d- -f4
+get_version = glite-info-service-version glite-lb-server
 
 # A command to return the service endpoint to stdout (uses variables set
 # in the init script)
