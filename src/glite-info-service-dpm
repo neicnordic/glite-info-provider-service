@@ -43,15 +43,15 @@ case "$1" in
 
     status)
 
-    stat1=`/sbin/service dpm status`
+    stat1=`glite-info-service-status dpm`
     rc1=$?
 
-    stat2=`/sbin/service dpnsdaemon status`
+    stat2=`glite-info-service-status dpnsdaemon`
     rc2=$?
 
     case "$2" in
         v1)
-	stat3=`/sbin/service srmv1 status`
+	stat3=`glite-info-service-status srmv1`
 	rc3=$?
         ;;
         v2)

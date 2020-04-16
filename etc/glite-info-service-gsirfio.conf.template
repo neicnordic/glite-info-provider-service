@@ -32,7 +32,7 @@ get_endpoint = echo gsirfio://$HOSTNAME:5001/
 # The return code should indicate the status:
 # 0 = OK, 1 = Critical, 2 = Warning, 3 = Unknown, other = Other
 
-get_status = glite-info-service-test GSIRFIO && /sbin/service rfiod status
+get_status = glite-info-service-test GSIRFIO && glite-info-service-status rfiod
 
 # The URL of a WSDL document describing the service
 # If the string does not start with "http" this will be omitted

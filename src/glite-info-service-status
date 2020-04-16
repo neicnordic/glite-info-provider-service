@@ -5,24 +5,30 @@
 # and also to attempt to remove pids from the output as some people
 # don't like them and they anyway don't add any information
 
-if [ "x$1" == "x" ]; then
-    echo Service name missing
-# Returning 3 will give Unknown
-    exit 3
+if [ $# -lt 1 -o $# -gt 2 ]; then
+    echo "Usage: $0 SERVICE [INSTANCE]"
+    exit 3 # unknown
 fi
-
 service=$1
-shift
+instance=$2 # used for voms VO
 
 # Try to avoid localised strings
 export LANG=C
 
 # Collect the stdout and return code from service status
-string=`/sbin/service $service status $@`
+if [ -x /sbin/service ]; then
+    string=`/sbin/service $service status $instance`
+    # Strip out the standard representation of pids
+    echo $string | sed 's/(pid .*) //'
+else
+    if [ "$instance" ]; then
+        service_instance=$service@$instance
+    else
+        service_instance=$service
+    fi
+    systemctl status -n0 $service_instance | grep '^\s*Active:' | sed 's/.*: //'
+fi
 rc=$?
-
-# Strip out the standard representation of pids
-echo $string | sed 's/(pid .*) //'
 
 if [ $rc -eq 0 ]; then
     exit 0

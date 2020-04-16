@@ -72,7 +72,7 @@ get_qualitylevel = echo 2
 # The return code should indicate the status:
 # 0 = OK, 1 = Critical, 2 = Warning, 3 = Unknown, other = Other
 
-get_status = /sbin/service crond status
+get_status = glite-info-service-status crond
 
 # The ServingState for this Endpoint: 1 = closed, 2 = draining,
 # 3 = queueing, 4 = production (NB "production" has a different meaning
